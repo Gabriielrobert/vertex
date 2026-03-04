@@ -877,7 +877,7 @@
           // Update WhatsApp links
           const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
           const whatsappMessage = encodeURIComponent('Olá! Gostaria de saber mais sobre o serviço de criação de sites em 48h.');
-          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+          const whatsappUrl = `https://wa.me/5511991271581`;
           
           const whatsappLinks = ['nav-cta', 'mobile-cta', 'hero-cta-primary', 'final-cta-primary', 'whatsapp-float'];
           whatsappLinks.forEach(id => {
@@ -935,13 +935,30 @@
           fontEditable: undefined,
           fontSizeable: undefined
         }),
-        mapToEditPanelValues: (config) => new Map([
-          ['hero_headline', config.hero_headline || defaultConfig.hero_headline],
-          ['hero_subheadline', config.hero_subheadline || defaultConfig.hero_subheadline],
-          ['cta_primary', config.cta_primary || defaultConfig.cta_primary],
-          ['cta_secondary', config.cta_secondary || defaultConfig.cta_secondary],
-          ['whatsapp_number', config.whatsapp_number || defaultConfig.whatsapp_number]
-        ])
+        mapToEditPanelValues: (config) => {
+          // Update WhatsApp links whenever config changes
+          const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
+          const whatsappMessage = encodeURIComponent('Olá! Gostaria de saber mais sobre o serviço de criação de sites em 48h.');
+          const whatsappUrl = `https://wa.me/5511991271581`;
+          
+          const whatsappLinks = ['nav-cta', 'mobile-cta', 'hero-cta-primary', 'final-cta-primary', 'whatsapp-float'];
+          whatsappLinks.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+              el.href = whatsappUrl;
+              el.target = '_blank';
+              el.rel = 'noopener noreferrer';
+            }
+          });
+          
+          return new Map([
+            ['hero_headline', config.hero_headline || defaultConfig.hero_headline],
+            ['hero_subheadline', config.hero_subheadline || defaultConfig.hero_subheadline],
+            ['cta_primary', config.cta_primary || defaultConfig.cta_primary],
+            ['cta_secondary', config.cta_secondary || defaultConfig.cta_secondary],
+            ['whatsapp_number', config.whatsapp_number || defaultConfig.whatsapp_number]
+          ]);
+        }
       });
     }
 
@@ -997,7 +1014,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const whatsappNumber = defaultConfig.whatsapp_number;
       const whatsappMessage = encodeURIComponent('Olá! Gostaria de saber mais sobre o serviço de criação de sites em 48h.');
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+      const whatsappUrl = `https://wa.me/5511991271581`;
       
       const whatsappLinks = ['nav-cta', 'mobile-cta', 'hero-cta-primary', 'final-cta-primary', 'whatsapp-float'];
       whatsappLinks.forEach(id => {
@@ -1027,5 +1044,5 @@
       });
     });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d72232187a8af8f',t:'MTc3MjY0MDQ4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d7236659483c618',t:'MTc3MjY0MTI3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
