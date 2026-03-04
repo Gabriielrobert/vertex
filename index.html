@@ -145,6 +145,8 @@
       justify-content: center;
       box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
       transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
     }
     
     .whatsapp-float:hover {
@@ -157,6 +159,8 @@
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
     }
     
     .btn-primary::before {
@@ -251,44 +255,57 @@
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
- <body class="h-full overflow-auto"><!-- Navigation -->
+ <body class="h-full overflow-auto">
+  <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0b]/80 backdrop-blur-xl border-b border-white/5">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 md:h-20"><a href="#" class="flex items-center gap-2"> <img src="https://i.ibb.co/s9YNzYkg/Logo.png" alt="Vertex Logo" class="w-32 h-32 object-contain"> </a>
-     <div class="hidden md:flex items-center gap-8"><a href="#beneficios" class="text-sm text-gray-400 hover:text-white transition-colors">Benefícios</a> <a href="#processo" class="text-sm text-gray-400 hover:text-white transition-colors">Como Funciona</a> <a href="#portfolio" class="text-sm text-gray-400 hover:text-white transition-colors">Portfólio</a> <a href="#depoimentos" class="text-sm text-gray-400 hover:text-white transition-colors">Depoimentos</a> <a href="#faq" class="text-sm text-gray-400 hover:text-white transition-colors">FAQ</a>
-     </div><a href="#" id="nav-cta" class="hidden md:inline-flex gradient-primary text-white font-semibold px-6 py-2.5 rounded-full text-sm btn-primary"> Falar no WhatsApp </a> <button id="mobile-menu-btn" class="md:hidden text-white p-2">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    <div class="flex items-center justify-between h-16 md:h-20">
+     <a href="#" class="flex items-center gap-2"> <img src="https://i.ibb.co/s9YNzYkg/Logo.png" alt="Vertex Logo" class="w-32 h-32 object-contain"> </a>
+     <div class="hidden md:flex items-center gap-8">
+      <a href="#beneficios" class="text-sm text-gray-400 hover:text-white transition-colors">Benefícios</a> <a href="#processo" class="text-sm text-gray-400 hover:text-white transition-colors">Como Funciona</a> <a href="#portfolio" class="text-sm text-gray-400 hover:text-white transition-colors">Portfólio</a> <a href="#depoimentos" class="text-sm text-gray-400 hover:text-white transition-colors">Depoimentos</a> <a href="#faq" class="text-sm text-gray-400 hover:text-white transition-colors">FAQ</a>
+     </div><button id="nav-cta" class="hidden md:inline-flex gradient-primary text-white font-semibold px-6 py-2.5 rounded-full text-sm btn-primary"> Falar no WhatsApp </button> <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg></button>
     </div>
    </div><!-- Mobile Menu -->
    <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0b] border-t border-white/5">
-    <div class="px-4 py-4 space-y-3"><a href="#beneficios" class="block text-gray-400 hover:text-white py-2">Benefícios</a> <a href="#processo" class="block text-gray-400 hover:text-white py-2">Como Funciona</a> <a href="#portfolio" class="block text-gray-400 hover:text-white py-2">Portfólio</a> <a href="#depoimentos" class="block text-gray-400 hover:text-white py-2">Depoimentos</a> <a href="#faq" class="block text-gray-400 hover:text-white py-2">FAQ</a> <a href="#" id="mobile-cta" class="block gradient-primary text-white font-semibold px-6 py-3 rounded-full text-center mt-4"> Falar no WhatsApp </a>
+    <div class="px-4 py-4 space-y-3">
+     <a href="#beneficios" class="block text-gray-400 hover:text-white py-2">Benefícios</a> <a href="#processo" class="block text-gray-400 hover:text-white py-2">Como Funciona</a> <a href="#portfolio" class="block text-gray-400 hover:text-white py-2">Portfólio</a> <a href="#depoimentos" class="block text-gray-400 hover:text-white py-2">Depoimentos</a> <a href="#faq" class="block text-gray-400 hover:text-white py-2">FAQ</a> <button id="mobile-cta" class="w-full gradient-primary text-white font-semibold px-6 py-3 rounded-full text-center mt-4 btn-primary"> Falar no WhatsApp </button>
     </div>
    </div>
   </nav><!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center pt-20 grid-pattern overflow-hidden"><!-- Background elements -->
+  <section class="relative min-h-screen flex items-center pt-20 grid-pattern overflow-hidden">
+   <!-- Background elements -->
    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-[128px]"></div>
    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-[128px]"></div>
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"><!-- Content -->
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+     <!-- Content -->
      <div class="text-center lg:text-left">
-      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6 animate-fade-in"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> <span class="text-sm text-gray-300">Vagas limitadas esta semana</span>
+      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6 animate-fade-in">
+       <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> <span class="text-sm text-gray-300">Vagas limitadas esta semana</span>
       </div>
       <h1 id="hero-headline" class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in delay-100" style="opacity: 0;">Seu site profissional pronto em até <span class="gradient-text glow-text">48 horas.</span></h1>
       <p id="hero-subheadline" class="text-lg sm:text-xl text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in delay-200" style="opacity: 0;">Design premium, velocidade de entrega e foco total em resultado. Transformamos sua ideia em um site de alta conversão, sem enrolação.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in delay-300" style="opacity: 0;"><a href="#" id="hero-cta-primary" class="gradient-primary text-white font-semibold px-8 py-4 rounded-full text-lg btn-primary inline-flex items-center justify-center gap-2"> <span id="hero-cta-text">Quero meu site em 48h</span>
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg></a> <a href="#portfolio" id="hero-cta-secondary" class="bg-white/5 border border-white/10 text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2"> <span id="hero-secondary-text">Ver Portfólio</span>
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in delay-300" style="opacity: 0;">
+       <button id="hero-cta-primary" class="gradient-primary text-white font-semibold px-8 py-4 rounded-full text-lg btn-primary inline-flex items-center justify-center gap-2"> <span id="hero-cta-text">Quero meu site em 48h</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg></button> <a href="#portfolio" id="hero-cta-secondary" class="bg-white/5 border border-white/10 text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2"> <span id="hero-secondary-text">Ver Portfólio</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
         </svg></a>
       </div><!-- Trust badges -->
       <div class="flex items-center gap-6 mt-10 justify-center lg:justify-start animate-fade-in delay-400" style="opacity: 0;">
        <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewbox="0 0 20 20">
+         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
         </svg><span class="text-sm text-gray-400">+150 sites entregues</span>
        </div>
        <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
+         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
         </svg><span class="text-sm text-gray-400">4.9/5 avaliação</span>
        </div>
       </div>
@@ -296,13 +313,15 @@
      <div class="relative animate-slide-right delay-200" style="opacity: 0;">
       <div class="mockup-browser glow-primary animate-float">
        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10">
-        <div class="mockup-dots flex gap-1.5"><span class="bg-red-500"></span> <span class="bg-yellow-500"></span> <span class="bg-green-500"></span>
+        <div class="mockup-dots flex gap-1.5">
+         <span class="bg-red-500"></span> <span class="bg-yellow-500"></span> <span class="bg-green-500"></span>
         </div>
         <div class="flex-1 bg-white/5 rounded-md px-3 py-1.5 text-xs text-gray-500 text-center">
          vertex.com.br
         </div>
        </div>
-       <div class="p-4"><!-- Dashboard mockup -->
+       <div class="p-4">
+        <!-- Dashboard mockup -->
         <div class="bg-gradient-to-br from-indigo-600/20 to-violet-600/20 rounded-lg p-6 space-y-4">
          <div class="flex items-center justify-between">
           <div class="flex items-center gap-3">
@@ -357,13 +376,15 @@
       </div><!-- Floating elements -->
       <div class="absolute -top-4 -right-4 bg-green-500/20 border border-green-500/30 rounded-xl px-4 py-2 animate-float" style="animation-delay: 1s;">
        <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
         </svg><span class="text-sm text-green-400 font-medium">Site Online!</span>
        </div>
       </div>
       <div class="absolute -bottom-4 -left-4 bg-indigo-500/20 border border-indigo-500/30 rounded-xl px-4 py-2 animate-float" style="animation-delay: 2s;">
        <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg><span class="text-sm text-indigo-400 font-medium">48h Garantido</span>
        </div>
       </div>
@@ -373,14 +394,17 @@
   </section><!-- Benefits Section -->
   <section id="beneficios" class="py-20 md:py-32 relative">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 reveal"><span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Por que escolher a Vertex</span>
+    <div class="text-center mb-16 reveal">
+     <span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Por que escolher a Vertex</span>
      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Tudo que você precisa em um <span class="gradient-text">único pacote</span></h2>
      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Oferecemos uma solução completa para você ter presença online profissional, sem complicação.</p>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Benefit 1 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+     <!-- Benefit 1 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center mb-6">
-       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
        </svg>
       </div>
       <h3 class="font-display text-xl font-bold mb-3">Entrega em 48h</h3>
@@ -388,7 +412,8 @@
      </div><!-- Benefit 2 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center mb-6">
-       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
        </svg>
       </div>
       <h3 class="font-display text-xl font-bold mb-3">Design Responsivo</h3>
@@ -396,7 +421,8 @@
      </div><!-- Benefit 3 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center mb-6">
-       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
        </svg>
       </div>
       <h3 class="font-display text-xl font-bold mb-3">Otimizado para Conversão</h3>
@@ -404,7 +430,8 @@
      </div><!-- Benefit 4 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center mb-6">
-       <svg class="w-7 h-7 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+       <svg class="w-7 h-7 text-white" fill="currentColor" viewbox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
        </svg>
       </div>
       <h3 class="font-display text-xl font-bold mb-3">Integração WhatsApp</h3>
@@ -412,7 +439,8 @@
      </div><!-- Benefit 5 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center mb-6">
-       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
        </svg>
       </div>
       <h3 class="font-display text-xl font-bold mb-3">SEO Básico Incluso</h3>
@@ -420,7 +448,8 @@
      </div><!-- Benefit 6 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="w-14 h-14 gradient-primary rounded-2xl flex items-center justify-center mb-6">
-       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+       <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
        </svg>
       </div>
       <h3 class="font-display text-xl font-bold mb-3">Suporte Pós-Entrega</h3>
@@ -431,14 +460,17 @@
   </section><!-- Process Section -->
   <section id="processo" class="py-20 md:py-32 relative bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 reveal"><span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Processo Simplificado</span>
+    <div class="text-center mb-16 reveal">
+     <span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Processo Simplificado</span>
      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Como funciona a <span class="gradient-text">mágica</span></h2>
      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Um processo direto e sem burocracia para você ter seu site no ar o mais rápido possível.</p>
     </div><!-- Desktop View -->
-    <div class="hidden lg:flex items-center justify-between gap-2"><!-- Step 1 -->
+    <div class="hidden lg:flex items-center justify-between gap-2">
+     <!-- Step 1 -->
      <div class="text-center reveal flex-1">
       <div class="relative inline-block mb-6">
-       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center relative z-10"><span class="font-display text-3xl font-bold text-white">1</span>
+       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center relative z-10">
+        <span class="font-display text-3xl font-bold text-white">1</span>
        </div>
        <div class="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-50"></div>
       </div>
@@ -446,12 +478,14 @@
       <p class="text-gray-400 text-sm">Você preenche um briefing rápido com textos, fotos e referências do seu negócio.</p>
      </div><!-- Arrow -->
      <div class="flex-shrink-0 mb-12">
-      <svg class="w-8 h-8 text-indigo-500/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      <svg class="w-8 h-8 text-indigo-500/50" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>
      </div><!-- Step 2 -->
      <div class="text-center reveal flex-1">
       <div class="relative inline-block mb-6">
-       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center relative z-10"><span class="font-display text-3xl font-bold text-white">2</span>
+       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center relative z-10">
+        <span class="font-display text-3xl font-bold text-white">2</span>
        </div>
        <div class="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-50"></div>
       </div>
@@ -459,12 +493,14 @@
       <p class="text-gray-400 text-sm">Nossa equipe cria seu site com design profissional e foco em conversão.</p>
      </div><!-- Arrow -->
      <div class="flex-shrink-0 mb-12">
-      <svg class="w-8 h-8 text-indigo-500/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      <svg class="w-8 h-8 text-indigo-500/50" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>
      </div><!-- Step 3 -->
      <div class="text-center reveal flex-1">
       <div class="relative inline-block mb-6">
-       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center relative z-10"><span class="font-display text-3xl font-bold text-white">3</span>
+       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center relative z-10">
+        <span class="font-display text-3xl font-bold text-white">3</span>
        </div>
        <div class="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-50"></div>
       </div>
@@ -472,12 +508,14 @@
       <p class="text-gray-400 text-sm">Você revisa e solicita ajustes. Garantimos que fique exatamente como você precisa.</p>
      </div><!-- Arrow -->
      <div class="flex-shrink-0 mb-12">
-      <svg class="w-8 h-8 text-indigo-500/50" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      <svg class="w-8 h-8 text-indigo-500/50" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
       </svg>
      </div><!-- Step 4 -->
      <div class="text-center reveal flex-1">
       <div class="relative inline-block mb-6">
-       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center relative z-10"><span class="font-display text-3xl font-bold text-white">4</span>
+       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center relative z-10">
+        <span class="font-display text-3xl font-bold text-white">4</span>
        </div>
        <div class="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-50"></div>
       </div>
@@ -485,10 +523,12 @@
       <p class="text-gray-400 text-sm">Site aprovado, publicado e pronto para receber seus clientes. É isso!</p>
      </div>
     </div><!-- Mobile/Tablet View -->
-    <div class="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-8"><!-- Step 1 -->
+    <div class="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-8">
+     <!-- Step 1 -->
      <div class="text-center reveal">
       <div class="relative inline-block mb-6">
-       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center mx-auto relative z-10"><span class="font-display text-3xl font-bold text-white">1</span>
+       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center mx-auto relative z-10">
+        <span class="font-display text-3xl font-bold text-white">1</span>
        </div>
        <div class="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-50"></div>
       </div>
@@ -497,7 +537,8 @@
      </div><!-- Step 2 -->
      <div class="text-center reveal">
       <div class="relative inline-block mb-6">
-       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center mx-auto relative z-10"><span class="font-display text-3xl font-bold text-white">2</span>
+       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center mx-auto relative z-10">
+        <span class="font-display text-3xl font-bold text-white">2</span>
        </div>
        <div class="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-50"></div>
       </div>
@@ -506,7 +547,8 @@
      </div><!-- Step 3 -->
      <div class="text-center reveal">
       <div class="relative inline-block mb-6">
-       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center mx-auto relative z-10"><span class="font-display text-3xl font-bold text-white">3</span>
+       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center mx-auto relative z-10">
+        <span class="font-display text-3xl font-bold text-white">3</span>
        </div>
        <div class="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-50"></div>
       </div>
@@ -515,7 +557,8 @@
      </div><!-- Step 4 -->
      <div class="text-center reveal">
       <div class="relative inline-block mb-6">
-       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center mx-auto relative z-10"><span class="font-display text-3xl font-bold text-white">4</span>
+       <div class="w-20 h-20 gradient-primary rounded-3xl flex items-center justify-center mx-auto relative z-10">
+        <span class="font-display text-3xl font-bold text-white">4</span>
        </div>
        <div class="absolute inset-0 gradient-primary rounded-3xl blur-xl opacity-50"></div>
       </div>
@@ -527,49 +570,66 @@
   </section><!-- Portfolio Section -->
   <section id="portfolio" class="py-20 md:py-32 relative">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 reveal"><span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Nosso Portfólio</span>
+    <div class="text-center mb-16 reveal">
+     <span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Nosso Portfólio</span>
      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Projetos que <span class="gradient-text">geram resultado</span></h2>
      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Confira alguns dos sites que desenvolvemos para nossos clientes satisfeitos.</p>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Portfolio 1 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <!-- Portfolio 1 -->
      <div class="gradient-border portfolio-card card-hover reveal overflow-hidden">
-      <div class="aspect-video bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center overflow-hidden"><img src="https://i.ibb.co/23Ps7N8R/01.png" alt="Portfolio project 1" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#e5e7eb'; this.alt='Image unavailable';">
+      <div class="aspect-video bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center overflow-hidden">
+       <img src="https://i.ibb.co/23Ps7N8R/01.png" alt="Portfolio project 1" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#e5e7eb'; this.alt='Image unavailable';">
       </div>
-      <div class="p-6"><span class="text-xs text-emerald-400 font-medium uppercase tracking-wider">Site Institucional</span>
+      <div class="p-6">
+       <span class="text-xs text-emerald-400 font-medium uppercase tracking-wider">Site Institucional</span>
        <h3 class="font-display text-xl font-bold mt-2 mb-2">Construtora Elite</h3>
        <p class="text-gray-400 text-sm">Site completo para construtora com portfólio de obras e formulário de orçamento.</p>
-       <div class="flex items-center gap-4 mt-4 text-sm text-gray-500"><span class="flex items-center gap-1">
-         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+       <div class="flex items-center gap-4 mt-4 text-sm text-gray-500">
+        <span class="flex items-center gap-1">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
          </svg> 36h </span> <span class="flex items-center gap-1">
-         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
          </svg> 100% Responsivo </span>
        </div>
       </div>
      </div><!-- Portfolio 2 -->
      <div class="gradient-border portfolio-card card-hover reveal overflow-hidden">
-      <div class="aspect-video bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center overflow-hidden"><img src="https://i.ibb.co/23Ps7N8R/01.png" alt="Portfolio project 2" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#e5e7eb'; this.alt='Image unavailable';">
+      <div class="aspect-video bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center overflow-hidden">
+       <img src="https://i.ibb.co/23Ps7N8R/01.png" alt="Portfolio project 2" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#e5e7eb'; this.alt='Image unavailable';">
       </div>
-      <div class="p-6"><span class="text-xs text-rose-400 font-medium uppercase tracking-wider">Landing Page</span>
+      <div class="p-6">
+       <span class="text-xs text-rose-400 font-medium uppercase tracking-wider">Landing Page</span>
        <h3 class="font-display text-xl font-bold mt-2 mb-2">Clínica Estética Bella</h3>
        <p class="text-gray-400 text-sm">Landing page de alta conversão para clínica de estética com agendamento online.</p>
-       <div class="flex items-center gap-4 mt-4 text-sm text-gray-500"><span class="flex items-center gap-1">
-         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+       <div class="flex items-center gap-4 mt-4 text-sm text-gray-500">
+        <span class="flex items-center gap-1">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
          </svg> 24h </span> <span class="flex items-center gap-1">
-         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
          </svg> +40% Conversão </span>
        </div>
       </div>
      </div><!-- Portfolio 3 -->
      <div class="gradient-border portfolio-card card-hover reveal overflow-hidden">
-      <div class="aspect-video bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center overflow-hidden"><img src="https://i.ibb.co/23Ps7N8R/01.png" alt="Portfolio project 3" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#e5e7eb'; this.alt='Image unavailable';">
+      <div class="aspect-video bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center overflow-hidden">
+       <img src="https://i.ibb.co/23Ps7N8R/01.png" alt="Portfolio project 3" class="w-full h-full object-cover" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#e5e7eb'; this.alt='Image unavailable';">
       </div>
-      <div class="p-6"><span class="text-xs text-blue-400 font-medium uppercase tracking-wider">Profissional Liberal</span>
+      <div class="p-6">
+       <span class="text-xs text-blue-400 font-medium uppercase tracking-wider">Profissional Liberal</span>
        <h3 class="font-display text-xl font-bold mt-2 mb-2">Dr. Ricardo Mendes</h3>
        <p class="text-gray-400 text-sm">Site profissional para advogado com áreas de atuação e formulário de contato.</p>
-       <div class="flex items-center gap-4 mt-4 text-sm text-gray-500"><span class="flex items-center gap-1">
-         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+       <div class="flex items-center gap-4 mt-4 text-sm text-gray-500">
+        <span class="flex items-center gap-1">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
          </svg> 42h </span> <span class="flex items-center gap-1">
-         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
          </svg> SEO Otimizado </span>
        </div>
       </div>
@@ -579,27 +639,24 @@
   </section><!-- Testimonials Section -->
   <section id="depoimentos" class="py-20 md:py-32 relative bg-gradient-to-b from-transparent via-violet-500/5 to-transparent">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 reveal"><span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Depoimentos</span>
+    <div class="text-center mb-16 reveal">
+     <span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Depoimentos</span>
      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">O que nossos clientes <span class="gradient-text">dizem</span></h2>
      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Resultados reais de quem confiou na Vertex para criar sua presença online.</p>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Testimonial 1 -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <!-- Testimonial 1 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="flex items-center gap-1 mb-4">
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
       </div>
       <p class="text-gray-300 mb-6 leading-relaxed">"Incrível! Recebi meu site em <strong class="text-white">menos de 40 horas</strong>. Design profissional e já comecei a receber contatos pelo WhatsApp no mesmo dia. Recomendo demais!"</p>
@@ -615,20 +672,15 @@
      </div><!-- Testimonial 2 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="flex items-center gap-1 mb-4">
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
       </div>
       <p class="text-gray-300 mb-6 leading-relaxed">"Profissionalismo do início ao fim. O site ficou <strong class="text-white">muito melhor do que eu esperava</strong> e o suporte foi excepcional. Meus pacientes adoraram!"</p>
@@ -644,20 +696,15 @@
      </div><!-- Testimonial 3 -->
      <div class="gradient-border p-6 lg:p-8 card-hover reveal">
       <div class="flex items-center gap-1 mb-4">
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
-       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+       <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewbox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
        </svg>
       </div>
       <p class="text-gray-300 mb-6 leading-relaxed">"Cumpriram exatamente o que prometeram. <strong class="text-white">48 horas e meu site estava no ar</strong>. Atendimento rápido e resultado impecável."</p>
@@ -678,13 +725,15 @@
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="gradient-border p-8 md:p-12 lg:p-16 reveal">
      <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div><span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Nossa Garantia</span>
+      <div>
+       <span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">Nossa Garantia</span>
        <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">Compromisso total com o <span class="gradient-text">seu resultado</span></h2>
        <p class="text-gray-400 text-lg mb-8">Trabalhamos com total transparência e focamos 100% na sua satisfação. Sua confiança é nosso maior ativo.</p>
        <div class="space-y-6">
         <div class="flex items-start gap-4">
          <div class="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
          </div>
          <div>
@@ -694,7 +743,8 @@
         </div>
         <div class="flex items-start gap-4">
          <div class="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
          </div>
          <div>
@@ -704,7 +754,8 @@
         </div>
         <div class="flex items-start gap-4">
          <div class="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
          </div>
          <div>
@@ -727,7 +778,8 @@
          </div>
         </div>
         <div class="absolute -top-4 -right-4 w-16 h-16 bg-green-500/20 border border-green-500/30 rounded-full flex items-center justify-center animate-pulse">
-         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
          </svg>
         </div>
        </div>
@@ -738,25 +790,29 @@
   </section><!-- FAQ Section -->
   <section id="faq" class="py-20 md:py-32 relative bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent">
    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16 reveal"><span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">FAQ</span>
+    <div class="text-center mb-16 reveal">
+     <span class="inline-block gradient-text font-semibold text-sm uppercase tracking-wider mb-4">FAQ</span>
      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Perguntas <span class="gradient-text">frequentes</span></h2>
      <p class="text-gray-400 text-lg">Tire suas dúvidas antes de começar.</p>
     </div>
-    <div class="space-y-4 reveal"><!-- FAQ 1 -->
+    <div class="space-y-4 reveal">
+     <!-- FAQ 1 -->
      <div class="faq-item gradient-border cursor-pointer" onclick="toggleFaq(this)">
       <div class="p-6 flex items-center justify-between">
        <h3 class="font-semibold text-white pr-4">Preciso pagar antes de começar?</h3><span class="faq-icon w-8 h-8 gradient-primary rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300">
-        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg></span>
       </div>
       <div class="faq-answer px-6">
-       <p class="text-gray-400 pb-6">Não</p>
+       <p class="text-gray-400 pb-6">Sim, trabalhamos com uma entrada inicial de 50% para começar o desenvolvimento. Os outros 50% são pagos apenas após sua aprovação final. Assim você tem segurança total.</p>
       </div>
      </div><!-- FAQ 2 -->
      <div class="faq-item gradient-border cursor-pointer" onclick="toggleFaq(this)">
       <div class="p-6 flex items-center justify-between">
        <h3 class="font-semibold text-white pr-4">Posso pedir alterações no site?</h3><span class="faq-icon w-8 h-8 gradient-primary rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300">
-        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg></span>
       </div>
       <div class="faq-answer px-6">
@@ -766,7 +822,8 @@
      <div class="faq-item gradient-border cursor-pointer" onclick="toggleFaq(this)">
       <div class="p-6 flex items-center justify-between">
        <h3 class="font-semibold text-white pr-4">O site é meu? Fico com o código?</h3><span class="faq-icon w-8 h-8 gradient-primary rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300">
-        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg></span>
       </div>
       <div class="faq-answer px-6">
@@ -776,7 +833,8 @@
      <div class="faq-item gradient-border cursor-pointer" onclick="toggleFaq(this)">
       <div class="p-6 flex items-center justify-between">
        <h3 class="font-semibold text-white pr-4">A hospedagem está inclusa?</h3><span class="faq-icon w-8 h-8 gradient-primary rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300">
-        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg></span>
       </div>
       <div class="faq-answer px-6">
@@ -786,7 +844,8 @@
      <div class="faq-item gradient-border cursor-pointer" onclick="toggleFaq(this)">
       <div class="p-6 flex items-center justify-between">
        <h3 class="font-semibold text-white pr-4">E se eu não gostar do resultado?</h3><span class="faq-icon w-8 h-8 gradient-primary rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300">
-        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg></span>
       </div>
       <div class="faq-answer px-6">
@@ -803,9 +862,11 @@
     <div class="text-center reveal">
      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Pronto para ter seu site <span class="gradient-text">profissional?</span></h2>
      <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">Não perca mais tempo. Enquanto você espera, seus concorrentes estão fechando negócios. Fale conosco agora e tenha seu site em até 48 horas.</p>
-     <div class="flex flex-col sm:flex-row gap-4 justify-center"><a href="#" id="final-cta-primary" class="gradient-primary text-white font-semibold px-10 py-5 rounded-full text-lg btn-primary inline-flex items-center justify-center gap-3 animate-pulse-glow">
-       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-       </svg><span>Quero meu site agora</span> </a>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button id="final-cta-primary" class="gradient-primary text-white font-semibold px-10 py-5 rounded-full text-lg btn-primary inline-flex items-center justify-center gap-3 animate-pulse-glow">
+       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+       </svg><span>Quero meu site agora</span> </button>
      </div>
      <p class="text-gray-500 text-sm mt-6">Resposta em até 5 minutos durante horário comercial</p>
     </div>
@@ -814,17 +875,18 @@
   <footer class="py-12 border-t border-white/5">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-     <div class="flex items-center gap-2">
-      <img src="https://i.ibb.co/s9YNzYkg/Logo.png" alt="Vertex Logo" class="w-24 h-24 object-contain">
+     <div class="flex items-center gap-2"><img src="https://i.ibb.co/s9YNzYkg/Logo.png" alt="Vertex Logo" class="w-24 h-24 object-contain">
      </div>
      <p class="text-gray-500 text-sm">© 2024 Vertex. Todos os direitos reservados.</p>
-     <div class="flex items-center gap-6"><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Termos de Uso</a> <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacidade</a>
+     <div class="flex items-center gap-6">
+      <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Termos de Uso</a> <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacidade</a>
      </div>
     </div>
    </div>
-  </footer><!-- WhatsApp Floating Button --> <a href="#" id="whatsapp-float" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-   <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-   </svg></a>
+  </footer><!-- WhatsApp Floating Button --> <button id="whatsapp-float" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+   <svg class="w-8 h-8 text-white" fill="currentColor" viewbox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+   </svg></button>
   <script>
     // Default configuration
     const defaultConfig = {
@@ -832,7 +894,7 @@
       hero_subheadline: 'Design premium, velocidade de entrega e foco total em resultado. Transformamos sua ideia em um site de alta conversão, sem enrolação.',
       cta_primary: 'Quero meu site em 48h',
       cta_secondary: 'Ver Portfólio',
-      whatsapp_number: '5511991271581',
+      contact_link: 'https://wa.me/5511991271581',
       background_color: '#0a0a0b',
       surface_color: '#141416',
       text_color: '#f5f5f7',
@@ -840,19 +902,11 @@
       secondary_color: '#818cf8'
     };
 
-    // Simple WhatsApp link update
-    function updateWhatsAppLinks(whatsappNumber) {
-      const whatsappUrl = `https://wa.me/${whatsappNumber}`;
-      
-      const whatsappLinks = ['nav-cta', 'mobile-cta', 'hero-cta-primary', 'final-cta-primary', 'whatsapp-float'];
-      whatsappLinks.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.href = whatsappUrl;
-          el.target = '_blank';
-          el.rel = 'noopener noreferrer';
-        }
-      });
+    // Handle WhatsApp/Contact link clicks
+    function handleContactClick(e) {
+      e.preventDefault();
+      const contactLink = window.elementSdk?.config?.contact_link || defaultConfig.contact_link;
+      window.open(contactLink, '_blank', 'noopener,noreferrer');
     }
 
     // Initialize Element SDK
@@ -883,16 +937,6 @@
           if (heroSecondaryText) {
             heroSecondaryText.textContent = config.cta_secondary || defaultConfig.cta_secondary;
           }
-          
-          // Update WhatsApp links
-          const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
-          const whatsappUrl = `https://wa.me/${whatsappNumber}`;
-          
-          const whatsappLinks = ['nav-cta', 'mobile-cta', 'hero-cta-primary', 'final-cta-primary', 'whatsapp-float'];
-          whatsappLinks.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.href = whatsappUrl;
-          });
           
           // Update colors
           const root = document.documentElement;
@@ -945,15 +989,12 @@
           fontSizeable: undefined
         }),
         mapToEditPanelValues: (config) => {
-          // Update WhatsApp links whenever config changes
-          updateWhatsAppLinks(config.whatsapp_number || defaultConfig.whatsapp_number);
-          
           return new Map([
             ['hero_headline', config.hero_headline || defaultConfig.hero_headline],
             ['hero_subheadline', config.hero_subheadline || defaultConfig.hero_subheadline],
             ['cta_primary', config.cta_primary || defaultConfig.cta_primary],
             ['cta_secondary', config.cta_secondary || defaultConfig.cta_secondary],
-            ['whatsapp_number', config.whatsapp_number || defaultConfig.whatsapp_number]
+            ['contact_link', config.contact_link || defaultConfig.contact_link]
           ]);
         }
       });
@@ -969,12 +1010,21 @@
       });
       
       // Close menu when clicking a link
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
+      mobileMenu.querySelectorAll('a, button').forEach(element => {
+        element.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
         });
       });
     }
+
+    // Add click handlers to all contact buttons
+    const contactButtons = ['nav-cta', 'mobile-cta', 'hero-cta-primary', 'final-cta-primary', 'whatsapp-float'];
+    contactButtons.forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.addEventListener('click', handleContactClick);
+      }
+    });
 
     // FAQ toggle function
     function toggleFaq(element) {
@@ -1007,11 +1057,6 @@
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
 
-    // Initialize WhatsApp links on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      updateWhatsAppLinks(defaultConfig.whatsapp_number);
-    });
-
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -1029,5 +1074,5 @@
       });
     });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d728424a49afa0a',t:'MTc3MjY0NDQ1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d729421962df1ef',t:'MTc3MjY0NTExMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
