@@ -18,9 +18,16 @@ margin:0;
 background:#0f1115;
 color:#fff;
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
 height:100vh;
+}
+
+.main-title{
+font-size:26px;
+font-weight:600;
+margin-bottom:20px;
 }
 
 .container{
@@ -31,16 +38,17 @@ width:420px;
 box-shadow:0 10px 40px rgba(0,0,0,0.5);
 }
 
-h1{
-margin-top:0;
-font-size:22px;
-font-weight:600;
+label{
+display:block;
+font-size:13px;
+margin-top:12px;
+margin-bottom:4px;
+color:#b9c0d0;
 }
 
 input{
 width:100%;
 padding:12px;
-margin-top:10px;
 border-radius:8px;
 border:1px solid #2a2e39;
 background:#0f1115;
@@ -101,14 +109,21 @@ color:#777;
 
 <body>
 
+<h1 class="main-title">Gerador PIX Copia e Cola</h1>
+
 <div class="container">
 
-<h1>Gerador PIX Copia e Cola</h1>
+<label>Chave PIX</label>
+<input id="chave" placeholder="CPF, email ou telefone">
 
-<input id="chave" placeholder="Chave PIX (CPF, email ou telefone)">
-<input id="nome" placeholder="Seu nome ou Sua marca">
-<input id="cidade" value="SAO PAULO" placeholder="Cidade">
-<input id="valor" placeholder="Valor (ex: 25.00)">
+<label>Nome do recebedor</label>
+<input id="nome" placeholder="Seu nome ou Sua Marca">
+
+<label>Cidade</label>
+<input id="cidade" value="SAO PAULO">
+
+<label>Valor</label>
+<input id="valor" placeholder="Ex: 25.00">
 
 <button class="generate" onclick="gerarPix()">
 Gerar Código PIX
