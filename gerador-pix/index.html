@@ -96,6 +96,11 @@ resize:none;
 font-size:13px;
 }
 
+textarea[readonly]{
+cursor:default;
+opacity:0.9;
+}
+
 .footer{
 text-align:center;
 margin-top:10px;
@@ -117,7 +122,7 @@ color:#777;
 <input id="chave" placeholder="CPF, email ou telefone">
 
 <label>Nome do recebedor</label>
-<input id="nome" placeholder="Seu nome ou Sua Marca">
+<input id="nome" placeholder="Seu nome ou Sua marca">
 
 <label>Cidade</label>
 <input id="cidade" value="SAO PAULO">
@@ -129,7 +134,7 @@ color:#777;
 Gerar Código PIX
 </button>
 
-<textarea id="resultado" placeholder="Código PIX aparecerá aqui"></textarea>
+<textarea id="resultado" readonly placeholder="Código PIX aparecerá aqui"></textarea>
 
 <button class="copy" id="copyBtn" onclick="copiarPix()">
 Copiar Código
