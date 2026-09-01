@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento Automático</title>
+    <script>
+        // Define o tempo em milissegundos (ex: 10000 ms = 10 segundos)
+        const tempoDeEspera = 13000; // Ajuste o tempo aqui
+
+        // URL para onde será redirecionado
+        const urlDestino = "https://drive.google.com/drive/folders/1K5pIDlRcpLeSSahmIMvkeRqRN-YZAsRx?usp=drive_link";
+
+        // Função para redirecionar após o tempo definido
+        function redirecionar() {
+            window.location.href = urlDestino;
+        }
+
+        // Chama a função de redirecionamento após o tempo de espera
+        setTimeout(redirecionar, tempoDeEspera);
+    </script>
+</head>
+</body>
+</html>
