@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Redirecionando...</title>
+    <title>Carregando...</title>
 
     <style>
         * {
@@ -21,6 +22,7 @@
         }
 
         .container {
+            position: relative;
             width: 100vw;
             height: 100vh;
             display: flex;
@@ -28,11 +30,148 @@
             align-items: center;
         }
 
+        /* IMAGEM */
         .container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        /* ÁREA DA BARRA */
+        .loading-box {
+            position: absolute;
+            left: 50%;
+            bottom: 8%;
+            transform: translateX(-50%);
+            width: 82%;
+            max-width: 600px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* TEXTO */
+        .loading-text {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            font-size: 17px;
+            font-weight: bold;
+            color: #ff5c8a;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* BARRA EXTERNA */
+        .progress-bar {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            background: rgba(255,255,255,0.9);
+            border: 4px solid #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+        }
+
+        /* PROGRESSO */
+        .progress {
+            width: 0%;
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(
+                90deg,
+                #ff6b9d,
+                #ffcf56,
+                #6ed6ff,
+                #8ee68e
+            );
+            transition: width 0.1s linear;
+            position: relative;
+        }
+
+        /* BRILHO DA BARRA */
+        .progress::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: rgba(255,255,255,0.35);
+            border-radius: 20px;
+        }
+
+        /* CONFETES */
+        .confetti {
+            position: absolute;
+            font-size: 22px;
+            animation: float 2s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .c1 {
+            left: -30px;
+            top: -15px;
+        }
+
+        .c2 {
+            right: -30px;
+            top: -10px;
+            animation-delay: .4s;
+        }
+
+        .c3 {
+            left: 15%;
+            bottom: -35px;
+            animation-delay: .8s;
+        }
+
+        .c4 {
+            right: 15%;
+            bottom: -35px;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(10deg);
+            }
+        }
+
+        /* PORCENTAGEM */
+        .percentage {
+            margin-top: 7px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* AJUSTE PARA TELAS PEQUENAS */
+        @media (max-width: 500px) {
+            .loading-box {
+                width: 82%;
+                bottom: 7%;
+            }
+
+            .loading-text {
+                font-size: 15px;
+                padding: 7px 15px;
+            }
+
+            .progress-bar {
+                height: 27px;
+            }
+
+            .confetti {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -40,14 +179,69 @@
 <body>
 
     <div class="container">
+
+        <!-- SUA IMAGEM 1080x1920 -->
         <img src="https://i.ibb.co/vvQTp9LW/01.jpg" alt="">
+
+        <!-- BARRA DE CARREGAMENTO -->
+        <div class="loading-box">
+
+            <div class="confetti c1">⭐</div>
+            <div class="confetti c2">🌈</div>
+            <div class="confetti c3">🎈</div>
+            <div class="confetti c4">✨</div>
+
+            <div class="loading-text">
+                Preparando seu material... 🥰
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+
+            <div class="percentage" id="percentage">
+                0%
+            </div>
+
+        </div>
+
     </div>
 
     <script>
-        setTimeout(function() {
-            window.location.href = "https://drive.google.com/drive/folders/1K5pIDlRcpLeSSahmIMvkeRqRN-YZAsRx?usp=drive_link";
-        }, 5000);
+
+        const progress = document.getElementById("progress");
+        const percentage = document.getElementById("percentage");
+
+        const tempoTotal = 5000; // 5 segundos
+        const intervalo = 50;
+
+        let inicio = Date.now();
+
+        const carregamento = setInterval(function() {
+
+            const tempoDecorrido = Date.now() - inicio;
+
+            let porcentagem = Math.min(
+                (tempoDecorrido / tempoTotal) * 100,
+                100
+            );
+
+            progress.style.width = porcentagem + "%";
+            percentage.textContent = Math.floor(porcentagem) + "%";
+
+            if (porcentagem >= 100) {
+
+                clearInterval(carregamento);
+
+                // REDIRECIONAMENTO
+                window.location.href = "https://drive.google.com/drive/folders/1K5pIDlRcpLeSSahmIMvkeRqRN-YZAsRx?usp=drive_link";
+
+            }
+
+        }, intervalo);
+
     </script>
 
 </body>
 </html>
+```
