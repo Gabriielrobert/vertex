@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Redirecionando...</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="https://i.ibb.co/vvQTp9LW/01.jpg" alt="">
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://drive.google.com/drive/folders/1K5pIDlRcpLeSSahmIMvkeRqRN-YZAsRx?usp=drive_link";
+        }, 5000);
+    </script>
+
+</body>
+</html>
