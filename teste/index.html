@@ -3,62 +3,105 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ajuste para ocupar corretamente a tela do celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>Carregando...</title>
 
     <style>
+        /* RESET COMPLETO */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html,
-        body {
+        html {
             width: 100%;
             height: 100%;
+            background: #000;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
             overflow: hidden;
             background: #000;
         }
 
-        /* CONTAINER PRINCIPAL */
+        /* CONTAINER OCUPANDO TODA A ÁREA VISÍVEL */
         .container {
-            position: relative;
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
             width: 100vw;
             height: 100vh;
+
+            /* Suporte para navegadores mobile modernos */
+            height: 100dvh;
+
+            overflow: hidden;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
+            background: #000;
         }
 
-        /* IMAGEM DE FUNDO */
+        /* IMAGEM */
         .container img {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
             width: 100%;
             height: 100%;
+
+            /*
+             * Cover faz a imagem preencher
+             * completamente a tela.
+             */
             object-fit: cover;
+
+            object-position: center center;
+
             display: block;
         }
 
-        /* ÁREA DA BARRA - CENTRALIZADA */
+        /* ÁREA DE CARREGAMENTO */
         .loading-box {
             position: absolute;
+
             top: 50%;
             left: 50%;
+
             transform: translate(-50%, -50%);
 
             width: 82%;
             max-width: 600px;
 
             text-align: center;
+
             font-family: Arial, sans-serif;
+
+            z-index: 10;
         }
 
-        /* ELEMENTOS DECORATIVOS */
+        /* ELEMENTOS INFANTIS */
         .confetti {
             position: absolute;
+
             font-size: 25px;
+
             pointer-events: none;
+
             animation: float 2s infinite ease-in-out;
         }
 
@@ -85,7 +128,7 @@
             animation-delay: 1.2s;
         }
 
-        /* ANIMAÇÃO DOS ELEMENTOS */
+        /* ANIMAÇÃO */
         @keyframes float {
             0%,
             100% {
@@ -97,14 +140,16 @@
             }
         }
 
-        /* TEXTO ACIMA DA BARRA */
+        /* TEXTO */
         .loading-text {
             display: inline-block;
 
             margin-bottom: 12px;
+
             padding: 9px 20px;
 
             background: rgba(255, 255, 255, 0.96);
+
             border-radius: 25px;
 
             font-size: 18px;
@@ -112,7 +157,8 @@
 
             color: #ff5c8a;
 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
         /* BARRA EXTERNA */
@@ -125,14 +171,16 @@
             background: rgba(255, 255, 255, 0.92);
 
             border: 4px solid #ffffff;
+
             border-radius: 30px;
 
             overflow: hidden;
 
-            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.3);
+            box-shadow:
+                0 5px 14px rgba(0, 0, 0, 0.3);
         }
 
-        /* BARRA DE PROGRESSO */
+        /* PROGRESSO */
         .progress {
             position: relative;
 
@@ -152,7 +200,7 @@
             transition: width 0.05s linear;
         }
 
-        /* BRILHO DA BARRA */
+        /* BRILHO */
         .progress::after {
             content: "";
 
@@ -182,7 +230,7 @@
                 0 2px 4px rgba(0, 0, 0, 0.7);
         }
 
-        /* AJUSTES PARA CELULARES */
+        /* CELULARES */
         @media (max-width: 500px) {
 
             .loading-box {
@@ -191,7 +239,9 @@
 
             .loading-text {
                 font-size: 15px;
+
                 padding: 8px 16px;
+
                 margin-bottom: 10px;
             }
 
@@ -207,6 +257,17 @@
                 font-size: 20px;
             }
         }
+
+        /* IPHONE / ÁREA DO NOTCH */
+        @supports (padding: env(safe-area-inset-top)) {
+
+            .container {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+        }
     </style>
 </head>
 
@@ -214,30 +275,34 @@
 
     <div class="container">
 
-        <!-- IMAGEM 1080x1920 -->
+        <!--
+            COLOQUE SUA IMAGEM AQUI.
+            Ideal: 1080x1920px
+        -->
         <img src="https://i.ibb.co/gFzJ3jQX/Background.png" alt="">
 
-        <!-- CARREGAMENTO CENTRAL -->
+        <!-- CARREGAMENTO -->
         <div class="loading-box">
 
-            <!-- ELEMENTOS INFANTIS -->
             <div class="confetti c1">⭐</div>
             <div class="confetti c2">🌈</div>
             <div class="confetti c3">🎈</div>
             <div class="confetti c4">✨</div>
 
-            <!-- TEXTO -->
             <div class="loading-text">
                 Preparando seu material... 🥰
             </div>
 
-            <!-- BARRA -->
             <div class="progress-bar">
-                <div class="progress" id="progress"></div>
+                <div
+                    class="progress"
+                    id="progress">
+                </div>
             </div>
 
-            <!-- PORCENTAGEM -->
-            <div class="percentage" id="percentage">
+            <div
+                class="percentage"
+                id="percentage">
                 0%
             </div>
 
@@ -247,47 +312,46 @@
 
     <script>
 
-        const progress = document.getElementById("progress");
-        const percentage = document.getElementById("percentage");
+        const progress =
+            document.getElementById("progress");
 
-        /* TEMPO TOTAL DO CARREGAMENTO */
-        const tempoTotal = 10000;
+        const percentage =
+            document.getElementById("percentage");
 
-        /* INTERVALO DE ATUALIZAÇÃO */
-        const intervalo = 50;
+        /* TEMPO TOTAL: 5 SEGUNDOS */
+        const tempoTotal = 5000;
 
         const inicio = Date.now();
 
         const carregamento = setInterval(function () {
 
-            const tempoDecorrido = Date.now() - inicio;
+            const tempoDecorrido =
+                Date.now() - inicio;
 
             let porcentagem =
                 (tempoDecorrido / tempoTotal) * 100;
 
-            /* LIMITA A 100% */
-            porcentagem = Math.min(porcentagem, 100);
+            porcentagem =
+                Math.min(porcentagem, 100);
 
-            /* ATUALIZA A BARRA */
-            progress.style.width = porcentagem + "%";
+            /* ATUALIZA BARRA */
+            progress.style.width =
+                porcentagem + "%";
 
-            /* ATUALIZA O NÚMERO */
+            /* ATUALIZA PORCENTAGEM */
             percentage.textContent =
                 Math.floor(porcentagem) + "%";
 
-            /* AO CHEGAR EM 100% */
+            /* REDIRECIONAMENTO */
             if (porcentagem >= 100) {
 
                 clearInterval(carregamento);
 
-                /*
-                 * COLOQUE AQUI O LINK
-                 * PARA ONDE O USUÁRIO SERÁ REDIRECIONADO
-                 */
-                window.location.href = "https://drive.google.com/drive/folders/1K5pIDlRcpLeSSahmIMvkeRqRN-YZAsRx?usp=drive_link";
+                window.location.href =
+                    "https://drive.google.com/drive/folders/1K5pIDlRcpLeSSahmIMvkeRqRN-YZAsRx?usp=drive_link";
             }
 
-        }, intervalo);
+        }, 50);
 
     </script>
 
