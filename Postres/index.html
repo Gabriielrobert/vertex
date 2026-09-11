@@ -5,406 +5,206 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#8a3f55" />
   <title>Recetas de Postres en Vaso</title>
-
   <style>
     :root{
-      --bg:#fff8f5;
-      --card:#ffffff;
-      --text:#35272c;
-      --muted:#806f75;
-      --accent:#8a3f55;
-      --accent-dark:#6e2f43;
-      --line:#eadde1;
-      --shadow:0 10px 30px rgba(75, 40, 51, .12);
+      --bg:#fff8f5; --text:#35272c; --muted:#806f75; --accent:#8a3f55;
+      --accent-dark:#6e2f43; --line:#eadde1; --shadow:0 10px 30px rgba(75,40,51,.12);
       --footer-h:84px;
     }
-
     *{box-sizing:border-box}
-
-    html,body{
-      margin:0;
-      padding:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-    }
-
-    body{
-      min-height:100vh;
-      padding-bottom:calc(var(--footer-h) + env(safe-area-inset-bottom));
-    }
-
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:20;
-      background:rgba(255,248,245,.94);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
-      padding:12px 14px;
-    }
-
-    .topbar-inner{
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+    body{min-height:100vh;padding-bottom:calc(var(--footer-h) + env(safe-area-inset-bottom))}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,248,245,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 14px}
+    .topbar-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{min-width:0}.brand h1{margin:0;font-size:16px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand p{margin:3px 0 0;font-size:12px;color:var(--muted)}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    button{border:0;cursor:pointer;font:inherit}
+    .control-btn{min-width:42px;height:42px;padding:0 12px;border-radius:12px;background:#fff;color:var(--text);box-shadow:0 2px 12px rgba(74,45,55,.08);border:1px solid var(--line);font-weight:700}
+    .control-btn:disabled{opacity:.45;cursor:not-allowed}
+    .page-pill{display:inline-flex;align-items:center;gap:4px;padding:0 12px;height:42px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:700;white-space:nowrap}
+    .viewer-wrap{max-width:1000px;margin:0 auto;padding:18px 12px 28px}
+    .status{margin:0 0 12px;text-align:center;color:var(--muted);font-size:13px}
+    .image-stage{background:#efe8ea;border-radius:18px;padding:12px;box-shadow:var(--shadow);min-height:360px;display:flex;justify-content:center;align-items:flex-start;overflow:auto;-webkit-overflow-scrolling:touch}
+    #page-image{display:block;max-width:none;background:#fff;box-shadow:0 6px 22px rgba(46,28,34,.16);border-radius:4px;user-select:none;-webkit-user-drag:none}
+    .error{display:none;width:100%;padding:24px;text-align:center;color:#7a2637;background:#fff;border:1px solid #f0ccd4;border-radius:14px}
+    .error strong{display:block;margin-bottom:8px}
+    .payment-notice{
       max-width:1000px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-
-    .brand{
-      min-width:0;
-    }
-
-    .brand h1{
-      margin:0;
-      font-size:16px;
-      line-height:1.2;
-      font-weight:800;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .brand p{
-      margin:3px 0 0;
-      font-size:12px;
-      color:var(--muted);
-    }
-
-    .controls{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    button{
-      border:0;
-      cursor:pointer;
-      font:inherit;
-    }
-
-    .control-btn{
-      min-width:42px;
-      height:42px;
-      padding:0 12px;
-      border-radius:12px;
-      background:#fff;
-      color:var(--text);
-      box-shadow:0 2px 12px rgba(74,45,55,.08);
-      border:1px solid var(--line);
-      font-weight:700;
-    }
-
-    .control-btn:disabled{
-      opacity:.45;
-      cursor:not-allowed;
-    }
-
-    .viewer-wrap{
-      max-width:1000px;
-      margin:0 auto;
-      padding:18px 12px 28px;
-    }
-
-    .status{
-      margin:0 0 12px;
-      text-align:center;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .pdf-stage{
-      background:#efe8ea;
-      border-radius:18px;
-      padding:12px;
-      box-shadow:var(--shadow);
-      min-height:320px;
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
-      overflow:auto;
-      -webkit-overflow-scrolling:touch;
-    }
-
-    #pdf-canvas{
-      display:block;
-      max-width:none;
-      background:#fff;
-      box-shadow:0 6px 22px rgba(46,28,34,.16);
-      border-radius:4px;
-    }
-
-    .error{
-      display:none;
-      width:100%;
-      padding:24px;
-      text-align:center;
-      color:#7a2637;
-      background:#fff;
-      border:1px solid #f0ccd4;
-      border-radius:14px;
-    }
-
-    .error strong{
-      display:block;
-      margin-bottom:8px;
-    }
-
-    .footer{
-      position:fixed;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:30;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(14px);
-      border-top:1px solid var(--line);
-      padding:12px 14px calc(12px + env(safe-area-inset-bottom));
-    }
-
-    .footer-inner{
-      max-width:1000px;
-      margin:0 auto;
-    }
-
-    .download-btn{
-      width:100%;
-      min-height:56px;
+      margin:0 auto 14px;
+      background:#fff3cd;
+      border:1px solid #f0d58b;
       border-radius:16px;
-      background:linear-gradient(135deg,var(--accent),var(--accent-dark));
-      color:#fff;
-      font-size:16px;
-      font-weight:800;
-      box-shadow:0 10px 24px rgba(138,63,85,.28);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      text-decoration:none;
-    }
-
-    .download-btn:active{
-      transform:translateY(1px);
-    }
-
-    .page-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:4px;
-      padding:0 12px;
-      height:42px;
-      border-radius:12px;
-      background:#fff;
-      border:1px solid var(--line);
-      font-size:13px;
+      padding:14px 16px;
+      box-shadow:0 6px 18px rgba(91,67,20,.08);
+      color:#5f4813;
+      text-align:center;
+      font-size:14px;
+      line-height:1.45;
       font-weight:700;
-      white-space:nowrap;
     }
-
+    .payment-notice strong{
+      color:#4b3509;
+    }
+    .footer{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:12px 14px calc(12px + env(safe-area-inset-bottom))}
+    .footer-inner{max-width:1000px;margin:0 auto}
+    .download-btn{width:100%;min-height:56px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-size:16px;font-weight:800;box-shadow:0 10px 24px rgba(138,63,85,.28);display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;padding:0 18px;text-align:center}
+    .download-btn:active{transform:translateY(1px)}
     @media (max-width:700px){
-      .topbar-inner{
-        align-items:flex-start;
-        flex-direction:column;
-      }
-
-      .controls{
-        width:100%;
-        justify-content:space-between;
-      }
-
-      .control-btn{
-        flex:1;
-      }
-
-      .page-pill{
-        flex:1.25;
-        justify-content:center;
-      }
-
-      .viewer-wrap{
-        padding-left:8px;
-        padding-right:8px;
-      }
-
-      .pdf-stage{
-        padding:8px;
-        border-radius:14px;
-      }
+      .topbar-inner{align-items:flex-start;flex-direction:column}
+      .controls{width:100%;justify-content:space-between}
+      .control-btn{flex:1}.page-pill{flex:1.25;justify-content:center}
+      .viewer-wrap{padding-left:8px;padding-right:8px}.image-stage{padding:8px;border-radius:14px}
     }
   </style>
 </head>
 <body>
-
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
         <h1>Recetas de Postres en Vaso</h1>
-        <p>Recetario digital</p>
+        <p>Vista previa del material</p>
       </div>
-
       <div class="controls">
         <button class="control-btn" id="prev" aria-label="Página anterior">←</button>
-
-        <div class="page-pill">
-          Página <span id="page_num">1</span> de <span id="page_count">—</span>
-        </div>
-
+        <div class="page-pill">Página <span id="page_num">1</span> de <span id="page_count">60</span></div>
         <button class="control-btn" id="next" aria-label="Página siguiente">→</button>
-        <button class="control-btn" id="zoom_out" aria-label="Alejar">−</button>
-        <button class="control-btn" id="zoom_in" aria-label="Acercar">+</button>
       </div>
     </div>
   </header>
 
   <main class="viewer-wrap">
-    <p class="status" id="status">Cargando recetario…</p>
+    <div class="payment-notice">
+      <strong>Importante:</strong> si aún no has realizado tu contribución, por favor hazla ahora para valorar y apoyar este material que ya recibiste.
+    </div>
 
-    <section class="pdf-stage" id="pdf-stage">
-      <canvas id="pdf-canvas"></canvas>
-
+    <p class="status" id="status">Cargando página…</p>
+    <section class="image-stage" id="image-stage">
+      <img id="page-image" src="" alt="Página del recetario" />
       <div class="error" id="error-box">
-        <strong>No se pudo abrir el PDF.</strong>
-        Verifica que el archivo se llame <b>recetario.pdf</b> y esté en la misma carpeta que este HTML.
+        <strong>No se pudo cargar esta página.</strong>
+        Verifica que las imágenes estén dentro de la carpeta <b>paginas</b> y sigan el formato
+        <b>pagina-01.jpg, pagina-02.jpg, pagina-03.jpg...</b>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <a class="download-btn" id="downloadBtn" href="./recetario.pdf" download="Recetas-de-Postres-en-Vaso.pdf">
-        ⬇ Descargar recetario en PDF
+      <!-- TROQUE O LINK ABAIXO PELO LINK EXATO DO SEU GOOGLE DRIVE -->
+      <a class="download-btn" id="downloadBtn"
+         href="https://drive.google.com/"
+         target="_blank" rel="noopener noreferrer">
+        ⬇ Descargar todo el material en PDF
       </a>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs" type="module"></script>
+  <script>
+    const totalPages = 60;
 
-  <script type="module">
-    import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
+    // Estrutura esperada:
+    // paginas/pagina-01.jpg
+    // paginas/pagina-02.jpg
+    // ...
+    // paginas/pagina-60.jpg
 
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
+    const imageFolder = "./paginas/";
+    const imagePrefix = "pagina-";
+    const imageExtension = ".jpg";
 
-    const pdfUrl = "./recetario.pdf";
-
-    let pdfDoc = null;
     let pageNum = 1;
-    let pageRendering = false;
-    let pageNumPending = null;
-    let userScale = 1;
 
-    const canvas = document.getElementById("pdf-canvas");
-    const ctx = canvas.getContext("2d");
-    const stage = document.getElementById("pdf-stage");
+    const image = document.getElementById("page-image");
+    const stage = document.getElementById("image-stage");
     const status = document.getElementById("status");
     const errorBox = document.getElementById("error-box");
-
     const prevBtn = document.getElementById("prev");
     const nextBtn = document.getElementById("next");
-    const zoomInBtn = document.getElementById("zoom_in");
-    const zoomOutBtn = document.getElementById("zoom_out");
 
-    function getFitScale(viewport) {
-      const available = Math.max(280, stage.clientWidth - 18);
-      return Math.min(1.6, available / viewport.width);
+    document.getElementById("page_count").textContent = totalPages;
+
+    function pageFileName(num){
+      return imagePrefix + String(num).padStart(2,"0") + imageExtension;
     }
 
-    async function renderPage(num) {
-      pageRendering = true;
+    function updateButtons(){
+      prevBtn.disabled = pageNum <= 1;
+      nextBtn.disabled = pageNum >= totalPages;
+    }
+
+    function fitImage(){
+      if(!image.naturalWidth) return;
+      const availableWidth = Math.max(280, stage.clientWidth - 18);
+      const baseWidth = Math.min(image.naturalWidth, availableWidth);
+      image.style.width = Math.floor(baseWidth) + "px";
+      image.style.height = "auto";
+    }
+
+    function loadPage(num){
+      status.style.display = "block";
       status.textContent = "Cargando página…";
-
-      const page = await pdfDoc.getPage(num);
-
-      const baseViewport = page.getViewport({ scale: 1 });
-      const fitScale = getFitScale(baseViewport);
-      const finalScale = fitScale * userScale;
-
-      const viewport = page.getViewport({ scale: finalScale });
-
-      const outputScale = Math.min(window.devicePixelRatio || 1, 2);
-
-      canvas.width = Math.floor(viewport.width * outputScale);
-      canvas.height = Math.floor(viewport.height * outputScale);
-      canvas.style.width = `${Math.floor(viewport.width)}px`;
-      canvas.style.height = `${Math.floor(viewport.height)}px`;
-
-      const renderContext = {
-        canvasContext: ctx,
-        viewport,
-        transform: outputScale !== 1
-          ? [outputScale, 0, 0, outputScale, 0, 0]
-          : null
-      };
-
-      await page.render(renderContext).promise;
-
-      pageRendering = false;
-      status.textContent = "";
+      errorBox.style.display = "none";
+      image.style.display = "block";
       document.getElementById("page_num").textContent = num;
 
-      prevBtn.disabled = num <= 1;
-      nextBtn.disabled = num >= pdfDoc.numPages;
+      image.onload = () => {
+        status.textContent = "";
+        fitImage();
+        updateButtons();
+      };
 
-      if (pageNumPending !== null) {
-        const pending = pageNumPending;
-        pageNumPending = null;
-        renderPage(pending);
-      }
-    }
+      image.onerror = () => {
+        status.style.display = "none";
+        image.style.display = "none";
+        errorBox.style.display = "block";
+        updateButtons();
+      };
 
-    function queueRenderPage(num) {
-      if (pageRendering) {
-        pageNumPending = num;
-      } else {
-        renderPage(num);
-      }
+      image.src = imageFolder + pageFileName(num);
     }
 
     prevBtn.addEventListener("click", () => {
-      if (pageNum <= 1) return;
+      if(pageNum <= 1) return;
       pageNum--;
-      queueRenderPage(pageNum);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      loadPage(pageNum);
+      window.scrollTo({top:0,behavior:"smooth"});
     });
 
     nextBtn.addEventListener("click", () => {
-      if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
+      if(pageNum >= totalPages) return;
       pageNum++;
-      queueRenderPage(pageNum);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      loadPage(pageNum);
+      window.scrollTo({top:0,behavior:"smooth"});
     });
 
-    zoomInBtn.addEventListener("click", () => {
-      userScale = Math.min(2.5, userScale + 0.15);
-      queueRenderPage(pageNum);
-    });
-
-    zoomOutBtn.addEventListener("click", () => {
-      userScale = Math.max(0.65, userScale - 0.15);
-      queueRenderPage(pageNum);
-    });
 
     let resizeTimer;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        if (pdfDoc) queueRenderPage(pageNum);
-      }, 180);
+      resizeTimer = setTimeout(fitImage, 150);
     });
 
-    try {
-      pdfDoc = await pdfjsLib.getDocument(pdfUrl).promise;
-      document.getElementById("page_count").textContent = pdfDoc.numPages;
-      await renderPage(pageNum);
-    } catch (err) {
-      console.error(err);
-      canvas.style.display = "none";
-      status.style.display = "none";
-      errorBox.style.display = "block";
-    }
+    let touchStartX = 0;
+    stage.addEventListener("touchstart", e => {
+      if(!e.touches.length) return;
+      touchStartX = e.touches[0].clientX;
+    }, {passive:true});
+
+    stage.addEventListener("touchend", e => {
+      if(!e.changedTouches.length) return;
+      const deltaX = e.changedTouches[0].clientX - touchStartX;
+      if(Math.abs(deltaX) < 60) return;
+
+      if(deltaX < 0 && pageNum < totalPages){
+        pageNum++;
+        loadPage(pageNum);
+      } else if(deltaX > 0 && pageNum > 1){
+        pageNum--;
+        loadPage(pageNum);
+      }
+    }, {passive:true});
+
+    loadPage(pageNum);
   </script>
 </body>
 </html>
