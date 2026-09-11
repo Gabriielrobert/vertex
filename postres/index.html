@@ -1,210 +1,195 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#8a3f55" />
-  <title>Recetas de Postres en Vaso</title>
-  <style>
-    :root{
-      --bg:#fff8f5; --text:#35272c; --muted:#806f75; --accent:#8a3f55;
-      --accent-dark:#6e2f43; --line:#eadde1; --shadow:0 10px 30px rgba(75,40,51,.12);
-      --footer-h:84px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-    body{min-height:100vh;padding-bottom:calc(var(--footer-h) + env(safe-area-inset-bottom))}
-    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,248,245,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 14px}
-    .topbar-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{min-width:0}.brand h1{margin:0;font-size:16px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand p{margin:3px 0 0;font-size:12px;color:var(--muted)}
-    .controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    button{border:0;cursor:pointer;font:inherit}
-    .control-btn{min-width:42px;height:42px;padding:0 12px;border-radius:12px;background:#fff;color:var(--text);box-shadow:0 2px 12px rgba(74,45,55,.08);border:1px solid var(--line);font-weight:700}
-    .control-btn:disabled{opacity:.45;cursor:not-allowed}
-    .page-pill{display:inline-flex;align-items:center;gap:4px;padding:0 12px;height:42px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:700;white-space:nowrap}
-    .viewer-wrap{max-width:1000px;margin:0 auto;padding:18px 12px 28px}
-    .status{margin:0 0 12px;text-align:center;color:var(--muted);font-size:13px}
-    .image-stage{background:#efe8ea;border-radius:18px;padding:12px;box-shadow:var(--shadow);min-height:360px;display:flex;justify-content:center;align-items:flex-start;overflow:auto;-webkit-overflow-scrolling:touch}
-    #page-image{display:block;max-width:none;background:#fff;box-shadow:0 6px 22px rgba(46,28,34,.16);border-radius:4px;user-select:none;-webkit-user-drag:none}
-    .error{display:none;width:100%;padding:24px;text-align:center;color:#7a2637;background:#fff;border:1px solid #f0ccd4;border-radius:14px}
-    .error strong{display:block;margin-bottom:8px}
-    .payment-notice{
-      max-width:1000px;
-      margin:0 auto 14px;
-      background:#fff3cd;
-      border:1px solid #f0d58b;
-      border-radius:16px;
-      padding:14px 16px;
-      box-shadow:0 6px 18px rgba(91,67,20,.08);
-      color:#5f4813;
-      text-align:center;
-      font-size:14px;
-      line-height:1.45;
-      font-weight:700;
-    }
-    .payment-notice strong{
-      color:#4b3509;
-    }
-    .footer{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:12px 14px calc(12px + env(safe-area-inset-bottom))}
-    .footer-inner{max-width:1000px;margin:0 auto}
-    .download-btn{width:100%;min-height:56px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-size:16px;font-weight:800;box-shadow:0 10px 24px rgba(138,63,85,.28);display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;padding:0 18px;text-align:center}
-    .download-btn:active{transform:translateY(1px)}
-    @media (max-width:700px){
-      .topbar-inner{align-items:flex-start;flex-direction:column}
-      .controls{width:100%;justify-content:space-between}
-      .control-btn{flex:1}.page-pill{flex:1.25;justify-content:center}
-      .viewer-wrap{padding-left:8px;padding-right:8px}.image-stage{padding:8px;border-radius:14px}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Página</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  font-family:Arial, sans-serif;
+
+  /* Espaço para o botão fixo não cobrir o conteúdo */
+  padding-bottom:90px;
+}
+
+
+/* =========================
+   AVISO NO TOPO
+========================= */
+
+.aviso-topo{
+  width:100%;
+  background:#fff3cd;
+  color:#664d03;
+
+  border-bottom:2px solid #ffc107;
+
+  padding:15px 20px;
+
+  text-align:center;
+
+  font-size:15px;
+  font-weight:600;
+  line-height:1.5;
+}
+
+.aviso-topo strong{
+  font-weight:800;
+}
+
+
+/* =========================
+   IMAGENS DA PÁGINA
+========================= */
+
+.section{
+  position:relative;
+  width:100%;
+}
+
+.section img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+
+/* =========================
+   BOTÃO FIXO NO RODAPÉ
+========================= */
+
+.rodape-fixo{
+  position:fixed;
+
+  bottom:0;
+  left:0;
+
+  width:100%;
+
+  padding:12px 16px;
+
+  background:rgba(0,0,0,0.92);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:9999;
+}
+
+.botao-download{
+  width:100%;
+  max-width:600px;
+
+  display:block;
+
+  background:#22c55e;
+  color:#ffffff;
+
+  text-align:center;
+  text-decoration:none;
+
+  font-size:18px;
+  font-weight:bold;
+
+  padding:17px 25px;
+
+  border-radius:12px;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.35);
+
+  transition:0.2s;
+}
+
+.botao-download:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.08);
+}
+
+.botao-download:active{
+  transform:scale(0.98);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:600px){
+
+  body{
+    padding-bottom:85px;
+  }
+
+  .aviso-topo{
+    font-size:14px;
+    padding:12px 15px;
+  }
+
+  .rodape-fixo{
+    padding:10px 12px;
+  }
+
+  .botao-download{
+    font-size:16px;
+    padding:16px 20px;
+    border-radius:10px;
+  }
+
+}
+
+</style>
 </head>
+
+
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <h1>Recetas de Postres en Vaso</h1>
-        <p>Vista previa del material</p>
-      </div>
-      <div class="controls">
-        <button class="control-btn" id="prev" aria-label="Página anterior">←</button>
-        <div class="page-pill">Página <span id="page_num">1</span> de <span id="page_count">60</span></div>
-        <button class="control-btn" id="next" aria-label="Página siguiente">→</button>
-      </div>
-    </div>
-  </header>
-
-  <main class="viewer-wrap">
-    <div class="payment-notice">
-      <strong>Importante:</strong> si aún no has realizado tu contribución, por favor hazla ahora para valorar y apoyar este material que ya recibiste.
-    </div>
-
-    <p class="status" id="status">Cargando página…</p>
-    <section class="image-stage" id="image-stage">
-      <img id="page-image" src="" alt="Página del recetario" />
-      <div class="error" id="error-box">
-        <strong>No se pudo cargar esta página.</strong>
-        Verifica que las imágenes estén dentro de la carpeta <b>paginas</b> y sigan el formato
-        <b>pagina-01.jpg, pagina-02.jpg, pagina-03.jpg...</b>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <!-- TROQUE O LINK ABAIXO PELO LINK EXATO DO SEU GOOGLE DRIVE -->
-      <a class="download-btn" id="downloadBtn"
-         href="https://drive.google.com/"
-         target="_blank" rel="noopener noreferrer">
-        ⬇ Descargar todo el material en PDF
-      </a>
-    </div>
-  </footer>
-
-  <script>
-    const totalPages = 60;
-
-    // Estrutura esperada:
-    // postres/Promo Status.png
-    // postres/Promo Status.png
-    // ...
-    // postres/Promo Status.png
-
-    const imageFolder = "./Postres/";
-    const imagePrefix = "pagina-";
-    const imageExtension = ".jpg";
-
-    let pageNum = 1;
-
-    const image = document.getElementById("page-image");
-    const stage = document.getElementById("image-stage");
-    const status = document.getElementById("status");
-    const errorBox = document.getElementById("error-box");
-    const prevBtn = document.getElementById("prev");
-    const nextBtn = document.getElementById("next");
-
-    document.getElementById("page_count").textContent = totalPages;
-
-    function pageFileName(num){
-      return imagePrefix + String(num).padStart(2,"0") + imageExtension;
-    }
-
-    function updateButtons(){
-      prevBtn.disabled = pageNum <= 1;
-      nextBtn.disabled = pageNum >= totalPages;
-    }
-
-    function fitImage(){
-      if(!image.naturalWidth) return;
-      const availableWidth = Math.max(280, stage.clientWidth - 18);
-      const baseWidth = Math.min(image.naturalWidth, availableWidth);
-      image.style.width = Math.floor(baseWidth) + "px";
-      image.style.height = "auto";
-    }
-
-    function loadPage(num){
-      status.style.display = "block";
-      status.textContent = "Cargando página…";
-      errorBox.style.display = "none";
-      image.style.display = "block";
-      document.getElementById("page_num").textContent = num;
-
-      image.onload = () => {
-        status.textContent = "";
-        fitImage();
-        updateButtons();
-      };
-
-      image.onerror = () => {
-        status.style.display = "none";
-        image.style.display = "none";
-        errorBox.style.display = "block";
-        updateButtons();
-      };
-
-      image.src = imageFolder + pageFileName(num);
-    }
-
-    prevBtn.addEventListener("click", () => {
-      if(pageNum <= 1) return;
-      pageNum--;
-      loadPage(pageNum);
-      window.scrollTo({top:0,behavior:"smooth"});
-    });
-
-    nextBtn.addEventListener("click", () => {
-      if(pageNum >= totalPages) return;
-      pageNum++;
-      loadPage(pageNum);
-      window.scrollTo({top:0,behavior:"smooth"});
-    });
 
 
-    let resizeTimer;
-    window.addEventListener("resize", () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(fitImage, 150);
-    });
+<!-- AVISO NO TOPO -->
 
-    let touchStartX = 0;
-    stage.addEventListener("touchstart", e => {
-      if(!e.touches.length) return;
-      touchStartX = e.touches[0].clientX;
-    }, {passive:true});
+<div class="aviso-topo">
+  ⚠️ <strong>Aviso importante:</strong>
+  Este material foi liberado antecipadamente com base na sua confirmação de contribuição.
+  Caso ainda não tenha contribuído, pedimos que regularize sua contribuição.
+</div>
 
-    stage.addEventListener("touchend", e => {
-      if(!e.changedTouches.length) return;
-      const deltaX = e.changedTouches[0].clientX - touchStartX;
-      if(Math.abs(deltaX) < 60) return;
 
-      if(deltaX < 0 && pageNum < totalPages){
-        pageNum++;
-        loadPage(pageNum);
-      } else if(deltaX > 0 && pageNum > 1){
-        pageNum--;
-        loadPage(pageNum);
-      }
-    }, {passive:true});
+<!-- IMAGENS -->
 
-    loadPage(pageNum);
-  </script>
+<section class="section">
+  <img src="https://i.ibb.co/t5pbqNY/Banner.png" alt="">
+</section>
+
+<section class="section">
+  <img src="https://i.ibb.co/t5pbqNY/Banner.png" alt="">
+</section>
+
+
+<!-- BOTÃO FIXO NO RODAPÉ -->
+
+<div class="rodape-fixo">
+
+  <a
+    href="SEU_LINK_AQUI"
+    class="botao-download"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Baixar o material completo
+  </a>
+
+</div>
+
+
 </body>
 </html>
