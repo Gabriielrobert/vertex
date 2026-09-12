@@ -1,811 +1,369 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
+<!----PreviewCard---->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Haz clic en el botón para acceder">
+<meta property="og:description" content="Más de 2000 moldes por solo $99.">
+<meta property="og:url" content="https://vertexagency.online/">
+<meta property="og:image" content="https://vertexagency.online/PreviwMoldes.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!----PreviewCard---->
+    
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Página</title>
+    <!-- Ajuste para ocupar corretamente a tela do celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<style>
+    <title>Carregando...</title>
 
-/* =========================
-   CONFIGURAÇÕES GERAIS
-========================= */
+    <style>
+        /* RESET COMPLETO */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+        html {
+            width: 100%;
+            height: 100%;
+            background: #000;
+        }
 
-html, body{
-  width:100%;
-}
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+        }
 
-body{
-  background:#000;
-  font-family:Arial, sans-serif;
+        /* CONTAINER OCUPANDO TODA A ÁREA VISÍVEL */
+        .container {
+            position: fixed;
 
-  /* Espaço para o botão fixo */
-  padding-bottom:90px;
-}
+            top: 0;
+            left: 0;
 
+            width: 100vw;
+            height: 100vh;
 
-/* =========================
-   PRELOADER
-========================= */
+            /* Suporte para navegadores mobile modernos */
+            height: 100dvh;
 
-#preloader{
-  position:fixed;
+            overflow: hidden;
 
-  top:0;
-  left:0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-  width:100%;
-  height:100%;
+            background: #000;
+        }
 
-  background:#ffffff;
+        /* IMAGEM */
+        .container img {
+            position: absolute;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+            top: 0;
+            left: 0;
 
-  z-index:999999;
+            width: 100%;
+            height: 100%;
 
-  transition:
-    opacity 0.5s ease,
-    visibility 0.5s ease;
-}
+            /*
+             * Cover faz a imagem preencher
+             * completamente a tela.
+             */
+            object-fit: cover;
 
+            object-position: center center;
 
-/* Quando o preloader desaparecer */
+            display: block;
+        }
 
-#preloader.oculto{
-  opacity:0;
-  visibility:hidden;
-}
+        /* ÁREA DE CARREGAMENTO */
+        .loading-box {
+            position: absolute;
 
+            top: 50%;
+            left: 50%;
 
-.preloader-conteudo{
-  width:85%;
-  max-width:420px;
+            transform: translate(-50%, -50%);
 
-  text-align:center;
-}
+            width: 82%;
+            max-width: 600px;
 
+            text-align: center;
 
-/* =========================
-   IMAGEM DO PRELOADER
-========================= */
+            font-family: Arial, sans-serif;
 
-.preloader-imagem{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+            z-index: 10;
+        }
 
-  margin-bottom:20px;
-}
+        /* ELEMENTOS INFANTIS */
+        .confetti {
+            position: absolute;
 
+            font-size: 25px;
 
-.preloader-imagem img{
+            pointer-events: none;
 
-  width:100px;
-  height:100px;
+            animation: float 2s infinite ease-in-out;
+        }
 
-  object-fit:cover;
+        .c1 {
+            left: -35px;
+            top: -20px;
+        }
 
-  border-radius:14px;
+        .c2 {
+            right: -35px;
+            top: -15px;
+            animation-delay: 0.4s;
+        }
 
-  box-shadow:
-    0 5px 18px rgba(0,0,0,0.12);
-}
+        .c3 {
+            left: 10%;
+            bottom: -40px;
+            animation-delay: 0.8s;
+        }
 
+        .c4 {
+            right: 10%;
+            bottom: -40px;
+            animation-delay: 1.2s;
+        }
 
-/* =========================
-   TEXTO DO PRELOADER
-========================= */
+        /* ANIMAÇÃO */
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
 
-.preloader-titulo{
+            50% {
+                transform: translateY(-8px) rotate(10deg);
+            }
+        }
 
-  font-size:22px;
+        /* TEXTO */
+        .loading-text {
+            display: inline-block;
 
-  font-weight:800;
+            margin-bottom: 12px;
 
-  color:#222;
+            padding: 9px 20px;
 
-  margin-bottom:8px;
-}
+            background: rgba(255, 255, 255, 0.96);
 
+            border-radius: 25px;
 
-.preloader-texto{
+            font-size: 18px;
+            font-weight: bold;
 
-  font-size:14px;
+            color: #ff5c8a;
 
-  color:#777;
+            box-shadow:
+                0 4px 12px rgba(0, 0, 0, 0.25);
+        }
 
-  margin-bottom:25px;
-}
+        /* BARRA EXTERNA */
+        .progress-bar {
+            position: relative;
 
+            width: 100%;
+            height: 32px;
 
-/* =========================
-   BARRA DE CARREGAMENTO
-========================= */
+            background: rgba(255, 255, 255, 0.92);
 
-.barra-container{
+            border: 4px solid #ffffff;
 
-  width:100%;
+            border-radius: 30px;
 
-  height:10px;
+            overflow: hidden;
 
-  background:#eeeeee;
+            box-shadow:
+                0 5px 14px rgba(0, 0, 0, 0.3);
+        }
 
-  border-radius:50px;
+        /* PROGRESSO */
+        .progress {
+            position: relative;
 
-  overflow:hidden;
+            width: 0%;
+            height: 100%;
 
-  margin-bottom:12px;
-}
+            border-radius: 20px;
 
+            background: linear-gradient(
+                90deg,
+                #ff6b9d,
+                #ffcf56,
+                #6ed6ff,
+                #8ee68e
+            );
 
-.barra{
+            transition: width 0.05s linear;
+        }
 
-  width:0%;
+        /* BRILHO */
+        .progress::after {
+            content: "";
 
-  height:100%;
+            position: absolute;
 
-  background:#22c55e;
+            top: 0;
+            left: 0;
 
-  border-radius:50px;
+            width: 100%;
+            height: 50%;
 
-  transition:width 0.3s ease;
-}
+            background: rgba(255, 255, 255, 0.35);
 
+            border-radius: 20px;
+        }
 
-.porcentagem{
+        /* PORCENTAGEM */
+        .percentage {
+            margin-top: 8px;
 
-  font-size:14px;
+            color: #ffffff;
 
-  font-weight:bold;
+            font-size: 15px;
+            font-weight: bold;
 
-  color:#555;
-}
+            text-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.7);
+        }
 
+        /* CELULARES */
+        @media (max-width: 500px) {
 
-/* =========================
-   AVISO NO TOPO
-========================= */
+            .loading-box {
+                width: 82%;
+            }
 
-.aviso-topo{
+            .loading-text {
+                font-size: 15px;
 
-  width:100%;
+                padding: 8px 16px;
 
-  background:#fff3cd;
+                margin-bottom: 10px;
+            }
 
-  color:#664d03;
+            .progress-bar {
+                height: 28px;
+            }
 
-  border-bottom:2px solid #ffc107;
+            .percentage {
+                font-size: 14px;
+            }
 
-  padding:15px 20px;
+            .confetti {
+                font-size: 20px;
+            }
+        }
 
-  text-align:center;
+        /* IPHONE / ÁREA DO NOTCH */
+        @supports (padding: env(safe-area-inset-top)) {
 
-  font-size:15px;
-
-  font-weight:600;
-
-  line-height:1.5;
-}
-
-
-.aviso-topo strong{
-
-  font-weight:800;
-}
-
-
-/* =========================
-   IMAGENS DA PÁGINA
-========================= */
-
-.section{
-
-  position:relative;
-
-  width:100%;
-}
-
-
-.section img{
-
-  width:100%;
-
-  height:auto;
-
-  display:block;
-}
-
-
-/* =========================
-   RODAPÉ FIXO
-========================= */
-
-.rodape-fixo{
-
-  position:fixed;
-
-  bottom:0;
-
-  left:0;
-
-  width:100%;
-
-  padding:12px 16px;
-
-  background:rgba(0,0,0,0.92);
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  z-index:9999;
-}
-
-
-/* =========================
-   BOTÃO DOWNLOAD
-========================= */
-
-.botao-download{
-
-  width:100%;
-
-  max-width:600px;
-
-  display:block;
-
-  background:#22c55e;
-
-  color:#ffffff;
-
-  text-align:center;
-
-  text-decoration:none;
-
-  font-size:18px;
-
-  font-weight:bold;
-
-  padding:17px 25px;
-
-  border-radius:12px;
-
-  box-shadow:
-    0 4px 15px rgba(0,0,0,0.35);
-
-  transition:0.2s;
-}
-
-
-.botao-download:hover{
-
-  transform:translateY(-2px);
-
-  filter:brightness(1.08);
-}
-
-
-.botao-download:active{
-
-  transform:scale(0.98);
-}
-
-
-/* =========================
-   RESPONSIVO PARA CELULAR
-========================= */
-
-@media(max-width:600px){
-
-  body{
-
-    padding-bottom:85px;
-
-  }
-
-
-  .preloader-imagem img{
-
-    width:90px;
-
-    height:90px;
-
-  }
-
-
-  .preloader-titulo{
-
-    font-size:20px;
-
-  }
-
-
-  .preloader-texto{
-
-    font-size:13px;
-
-  }
-
-
-  .aviso-topo{
-
-    font-size:14px;
-
-    padding:12px 15px;
-
-  }
-
-
-  .rodape-fixo{
-
-    padding:10px 12px;
-
-  }
-
-
-  .botao-download{
-
-    font-size:16px;
-
-    padding:16px 20px;
-
-    border-radius:10px;
-
-  }
-
-}
-
-</style>
-
+            .container {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <div class="container">
 
-<!-- ========================================
-     PRELOADER
-========================================= -->
+        <!--
+            COLOQUE SUA IMAGEM AQUI.
+            Ideal: 1080x1920px
+        -->
+        <img src="Background.png" alt="">
 
-<div id="preloader">
+        <!-- CARREGAMENTO -->
+        <div class="loading-box">
 
-  <div class="preloader-conteudo">
+            <div class="confetti c1">⭐</div>
+            <div class="confetti c2">🌈</div>
+            <div class="confetti c3">🎈</div>
+            <div class="confetti c4">✨</div>
 
+            <div class="loading-text">
+                Preparando su acceso... 🥰
+            </div>
 
-    <!-- IMAGEM QUADRADA -->
+            <div class="progress-bar">
+                <div
+                    class="progress"
+                    id="progress">
+                </div>
+            </div>
 
-    <div class="preloader-imagem">
+            <div
+                class="percentage"
+                id="percentage">
+                0%
+            </div>
 
-      <img
-        src="logo.png"
-        alt="Carregando material"
-      >
-
-    </div>
-
-
-
-    <!-- TEXTO -->
-
-    <div class="preloader-titulo">
-
-      Aguarde, seu acesso está sendo preparado
-
-    </div>
-
-
-    <div class="preloader-texto">
-
-      Estamos carregando seu material...
-
-    </div>
-
-
-
-    <!-- BARRA -->
-
-    <div class="barra-container">
-
-      <div
-        class="barra"
-        id="barra">
-      </div>
+        </div>
 
     </div>
 
+    <script>
 
+        const progress =
+            document.getElementById("progress");
 
-    <!-- PORCENTAGEM -->
+        const percentage =
+            document.getElementById("percentage");
 
-    <div
-      class="porcentagem"
-      id="porcentagem">
+        /* TEMPO TOTAL: 5 SEGUNDOS */
+        const tempoTotal = 10000;
 
-      0%
+        const inicio = Date.now();
 
-    </div>
+        const carregamento = setInterval(function () {
 
+            const tempoDecorrido =
+                Date.now() - inicio;
 
-  </div>
+            let porcentagem =
+                (tempoDecorrido / tempoTotal) * 100;
 
-</div>
+            porcentagem =
+                Math.min(porcentagem, 100);
 
+            /* ATUALIZA BARRA */
+            progress.style.width =
+                porcentagem + "%";
 
+            /* ATUALIZA PORCENTAGEM */
+            percentage.textContent =
+                Math.floor(porcentagem) + "%";
 
-<!-- ========================================
-     AVISO NO TOPO
-========================================= -->
+            /* REDIRECIONAMENTO */
+            if (porcentagem >= 100) {
 
-<div class="aviso-topo">
+                clearInterval(carregamento);
 
-  ⚠️ <strong>Aviso importante:</strong>
+                window.location.href =
+                    "https://drive.google.com/drive/folders/1mvPmIKdlMW-sgvdCMxgSNOIQl5oBufK9?usp=drive_link";
+            }
 
-  Este material foi liberado antecipadamente com base na sua confirmação de contribuição.
+        }, 50);
 
-  Caso ainda não tenha contribuído, pedimos que regularize sua contribuição.
-
-</div>
-
-
-
-<!-- ========================================
-     IMAGENS DO MATERIAL
-========================================= -->
-
-
-<section class="section">
-
-  <img
-    src="https://i.ibb.co/8LSTSzRC/1.png"
-    alt=""
-  >
-
-</section>
-
-
-
-<section class="section">
-
-  <img
-    src="https://i.ibb.co/mrTVP8fJ/2.png"
-    alt=""
-  >
-
-</section>
-
-<section class="section">
-
-  <img
-    src="https://i.ibb.co/Y7j6Mw8c/3.png"
-    alt=""
-  >
-
-</section>
-
-
-</section>
-
-<section class="section">
-
-  <img
-    src="https://i.ibb.co/tPBGjS6M/4.png"
-    alt=""
-  >
-
-</section>
-
-
-
-
-<!-- ========================================
-     BOTÃO FIXO NO RODAPÉ
-========================================= -->
-
-<div class="rodape-fixo">
-
-  <a
-    href="SEU_LINK_AQUI"
-    class="botao-download"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-
-    Baixar o material completo
-
-  </a>
-
-</div>
-
-
-
-<!-- ========================================
-     SCRIPT DO PRELOADER
-========================================= -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function(){
-
-  const preloader =
-    document.getElementById("preloader");
-
-  const barra =
-    document.getElementById("barra");
-
-  const porcentagem =
-    document.getElementById("porcentagem");
-
-
-  /*
-  Seleciona apenas as imagens
-  principais do material.
-  */
-
-  const imagens =
-    document.querySelectorAll(".section img");
-
-
-  let carregadas = 0;
-
-  let progressoVisual = 0;
-
-  let todasCarregadas = false;
-
-
-  const inicio = Date.now();
-
-
-  /*
-  Tempo mínimo que o preloader
-  permanecerá na tela.
-
-  2000 = 2 segundos
-  */
-
-  const tempoMinimo = 2000;
-
-
-
-  /* ========================================
-     BLOQUEIA O SCROLL
-  ========================================= */
-
-  document.body.style.overflow = "hidden";
-
-
-
-  /* ========================================
-     ANIMAÇÃO DA BARRA
-  ========================================= */
-
-  const animacao = setInterval(function(){
-
-
-    if(progressoVisual < 90){
-
-
-      progressoVisual +=
-        Math.floor(Math.random() * 5) + 1;
-
-
-      if(progressoVisual > 90){
-
-        progressoVisual = 90;
-
-      }
-
-
-      atualizarBarra(progressoVisual);
-
-    }
-
-
-  }, 150);
-
-
-
-  /* ========================================
-     ATUALIZA BARRA
-  ========================================= */
-
-  function atualizarBarra(valor){
-
-    barra.style.width =
-      valor + "%";
-
-    porcentagem.textContent =
-      valor + "%";
-
-  }
-
-
-
-  /* ========================================
-     IMAGEM CARREGADA
-  ========================================= */
-
-  function imagemCarregada(){
-
-    carregadas++;
-
-
-    if(carregadas >= imagens.length){
-
-      todasCarregadas = true;
-
-      finalizar();
-
-    }
-
-  }
-
-
-
-  /* ========================================
-     VERIFICA TODAS AS IMAGENS
-  ========================================= */
-
-  imagens.forEach(function(img){
-
-
-    if(img.complete){
-
-      imagemCarregada();
-
-    }
-
-    else{
-
-
-      img.addEventListener(
-        "load",
-        imagemCarregada
-      );
-
-
-      /*
-      Caso uma imagem tenha erro,
-      evita deixar o usuário
-      preso no preloader.
-      */
-
-      img.addEventListener(
-        "error",
-        imagemCarregada
-      );
-
-    }
-
-  });
-
-
-
-  /* ========================================
-     CASO NÃO EXISTAM IMAGENS
-  ========================================= */
-
-  if(imagens.length === 0){
-
-    todasCarregadas = true;
-
-    finalizar();
-
-  }
-
-
-
-  /* ========================================
-     FINALIZA O PRELOADER
-  ========================================= */
-
-  function finalizar(){
-
-
-    if(!todasCarregadas){
-
-      return;
-
-    }
-
-
-    const tempoDecorrido =
-      Date.now() - inicio;
-
-
-    const espera =
-      Math.max(
-        tempoMinimo - tempoDecorrido,
-        0
-      );
-
-
-
-    setTimeout(function(){
-
-
-      clearInterval(animacao);
-
-
-      /*
-      Completa a barra
-      */
-
-      atualizarBarra(100);
-
-
-
-      /*
-      Pequena pausa para mostrar 100%
-      */
-
-      setTimeout(function(){
-
-
-        preloader.classList.add(
-          "oculto"
-        );
-
-
-        /*
-        Libera novamente o scroll
-        */
-
-        document.body.style.overflow =
-          "auto";
-
-
-      }, 400);
-
-
-    }, espera);
-
-  }
-
-
-
-  /* ========================================
-     SEGURANÇA
-
-     Se alguma coisa der errado,
-     libera a página depois de
-     no máximo 10 segundos.
-  ========================================= */
-
-  setTimeout(function(){
-
-
-    if(
-      !preloader.classList.contains(
-        "oculto"
-      )
-    ){
-
-      todasCarregadas = true;
-
-      finalizar();
-
-    }
-
-
-  }, 10000);
-
-
-});
-
-</script>
-
+    </script>
 
 </body>
-
 </html>
